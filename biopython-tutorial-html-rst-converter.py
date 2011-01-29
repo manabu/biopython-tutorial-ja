@@ -142,7 +142,8 @@ class ExtractTextLinkParser(HTMLParser):
 
 
 def parse_biopython_tutorial(url):
-    shutil.rmtree("_rst")
+    if os.path.exists("_rst"):
+        shutil.rmtree("_rst")
     os.mkdir("_rst")
     response = urllib2.urlopen(url)
     parser = ExtractTextLinkParser()
