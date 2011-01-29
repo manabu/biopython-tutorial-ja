@@ -155,7 +155,7 @@ Seqオブジェクトには、stringのように .count() メソッドがあり�
 
 .. Note that using the Bio.SeqUtils.GC() function should automatically cope with mixed case sequences and the ambiguous nucleotide S which means G or C.
 
-Note that using the Bio.SeqUtils.GC() function should automatically cope with mixed case sequences and the ambiguous nucleotide S which means G or C.
+SeqUtils.GC() を使うと自動的に、大文字小文字の混ざったシーケンスや、GまたはCを表すヌクレオチドSを扱うことができます。
 
 .. Also note that just like a normal Python string, the Seq object is in some ways “read-only”. If you need to edit your sequence, for example simulating a point mutation, look at the Section 3.12 below which talks about the MutableSeq object.
 
@@ -164,12 +164,12 @@ Also note that just like a normal Python string, the Seq object is in some ways 
 .. index::
    pair: 3.3  Slicing a sequence;3.3  Slicing a sequence
 
-3.3  Slicing a sequence
------------------------
+3.3  シーケンスのスライス
+-------------------------
 
 .. A more complicated example, let’s get a slice of the sequence:
 
-A more complicated example, let’s get a slice of the sequence:
+より複雑なサンプルです、シーケンスをスライスしてみましょう:
 
 .. code-block:: python
 
@@ -190,7 +190,7 @@ The second thing to notice is that the slice is performed on the sequence data s
 
 .. Also like a Python string, you can do slices with a start, stop and stride (the step size, which defaults to one). For example, we can get the first, second and third codon positions of this DNA sequence:
 
-Also like a Python string, you can do slices with a start, stop and stride (the step size, which defaults to one). For example, we can get the first, second and third codon positions of this DNA sequence:
+Python stringのように、 start, stop , stride (ステップサイズで、デフォルトは1です) を使ってスライスすることができます。例として、このDNAシーケンスの、1つめ、2つめ、3つめのコドン位置を指定して取得してみましょう:
 
 .. code-block:: python
 
@@ -204,7 +204,7 @@ Also like a Python string, you can do slices with a start, stop and stride (the 
 
 .. Another stride trick you might have seen with a Python string is the use of a -1 stride to reverse the string. You can do this with a Seq object too:
 
-Another stride trick you might have seen with a Python string is the use of a -1 stride to reverse the string. You can do this with a Seq object too:
+別の stride の使い方として、Python string で、 -1 を指定することで逆向きの文字列を取得することができます。これをSeqオブジェクトでも使うことができます:
 
 .. code-block:: python
 
@@ -215,12 +215,12 @@ Another stride trick you might have seen with a Python string is the use of a -1
 .. index::
    pair: 3.4  Turning Seq objects into strings;3.4  Turning Seq objects into strings
 
-3.4  Turning Seq objects into strings
--------------------------------------
+3.4  Seqオブジェクトを文字列に変換する
+--------------------------------------
 
 .. If you really do just need a plain string, for example to write to a file, or insert into a database, then this is very easy to get:
 
-If you really do just need a plain string, for example to write to a file, or insert into a database, then this is very easy to get:
+データベースに追加したり、ファイルに書き込みたいときなど、普通のstringが必要ならば、次のようにして簡単に変換することができます:
 
 .. code-block:: python
 
@@ -230,7 +230,7 @@ If you really do just need a plain string, for example to write to a file, or in
 
 .. Since calling str() on a Seq object returns the full sequence as a string,you often don’t actually have to do this conversion explicitly.Python does this automatically with a print statement:
 
-Since calling str() on a Seq object returns the full sequence as a string,you often don’t actually have to do this conversion explicitly.Python does this automatically with a print statement:
+str()にSeqオブジェクトを渡すと、シーケンス全体の普通のstringが返ります。しかし明示的に呼ぶ必要がないときもあります。Pythonは、print分で、自動的にこれを行ってくれます:
 
 .. code-block:: python
 
@@ -240,7 +240,7 @@ Since calling str() on a Seq object returns the full sequence as a string,you of
 
 .. You can also use the Seq object directly with a %s placeholder when using the Python string formatting or interpolation operator (%):
 
-You can also use the Seq object directly with a %s placeholder when using the Python string formatting or interpolation operator (%):
+またSeqオブジェクトを、%s プレースホルダーや、補完演算子(%)に渡すことができます:
 
 .. code-block:: python
 
@@ -252,11 +252,11 @@ You can also use the Seq object directly with a %s placeholder when using the Py
 
 .. This line of code constructs a simple FASTA format record (without worrying about line wrapping).Section 4.5 describes a neat way to get a FASTA formattedstring from a SeqRecord object, while the more general topic of reading andwriting FASTA format sequence files is covered in Chapter 5.
 
-This line of code constructs a simple FASTA format record (without worrying about line wrapping).Section 4.5 describes a neat way to get a FASTA formattedstring from a SeqRecord object, while the more general topic of reading andwriting FASTA format sequence files is covered in Chapter 5.
+この1行で、単純なFASTA形式のレコードを作ることができます(行の折り返しを気にする必要はありません)。Section 4.5 で、SeqRecordオブジェクトからFASTA形式の文字列を得るきちんとした方法を述べます。またより一般的なFASTA形式の読み書きについては、 Chapter 5でカバーします
 
 .. NOTE: If you are using Biopython 1.44 or older, using str(my_seq)will give just a truncated representation. Instead use my_seq.tostring()(which is still available in the current Biopython releases for backwards compatibility):
 
-NOTE: If you are using Biopython 1.44 or older, using str(my_seq)will give just a truncated representation. Instead use my_seq.tostring()(which is still available in the current Biopython releases for backwards compatibility):
+NOTE: Biopython 1.44 か、それ以前のバージョンをお使いの場合、 str(my_seq) 切り捨てられたものが返ってきます。代わりに my_seq.tostring() を使ってください。(これは後方互換性を確保するために、現在のバージョンのBiopythonでも使うことができます):
 
 .. code-block:: python
 
