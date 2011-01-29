@@ -665,7 +665,7 @@ In the previous sections we talked about the Seq object translation method (and 
 
 .. Alternatively, these tables are labeled with ID numbers 1 and 2, respectively:
 
-Alternatively, these tables are labeled with ID numbers 1 and 2, respectively:
+また、これらのテーブルには、それぞれ ID番号1と2がついています:
 
 .. code-block:: python
 
@@ -676,7 +676,7 @@ Alternatively, these tables are labeled with ID numbers 1 and 2, respectively:
 
 .. You can compare the actual tables visually by printing them:
 
-You can compare the actual tables visually by printing them:
+これらを出力することで、実際のテーブルを視覚的に比較することができます:
 
 .. code-block:: python
 
@@ -709,7 +709,7 @@ You can compare the actual tables visually by printing them:
 
 .. and:
 
-and:
+と:
 
 .. code-block:: python
 
@@ -740,9 +740,9 @@ and:
     --+---------+---------+---------+---------+--
 
 
-.. You may find these following properties useful  for example if you are tryingto do your own gene finding:
+.. You may find these following properties useful  for example if you are trying to do your own gene finding:
 
-You may find these following properties useful  for example if you are tryingto do your own gene finding:
+You may find these following properties useful  for example if you are trying to do your own gene finding:
 
 .. code-block:: python
 
@@ -880,15 +880,15 @@ Either way will give you a sequence object which can be changed:
 
 .. Do note that unlike the Seq object, the MutableSeq object’s methods like reverse_complement() and reverse() act in-situ!
 
-Do note that unlike the Seq object, the MutableSeq object’s methods like reverse_complement() and reverse() act in-situ!
+Seqオブジェクトと違って、MutableSeqのreverse_complement()やreverse()のようなメソッドは、その場で実行されます!
 
 .. An important technical difference between mutable and immutable objects in Python means that you can’t use a MutableSeq object as a dictionary key, but you can use a Python string or a Seq object in this way.
 
-An important technical difference between mutable and immutable objects in Python means that you can’t use a MutableSeq object as a dictionary key, but you can use a Python string or a Seq object in this way.
+Pythonでの mutable と immutable のオブジェクトの技術的で重要な違いは、MutableSeqは、辞書のキーにすることができません、しかし、この方法でPythonの文字列またはSeqオブジェクトを使うことができます。
 
 .. Once you have finished editing your a MutableSeq object, it’s easy to get back to a read-only Seq object should you need to:
 
-Once you have finished editing your a MutableSeq object, it’s easy to get back to a read-only Seq object should you need to:
+MutableSeqオブジェクトを編集し終えたら、読み込み専用のSeqオブジェクトを簡単に取り出すことができます:
 
 .. code-block:: python
 
@@ -899,7 +899,7 @@ Once you have finished editing your a MutableSeq object, it’s easy to get back
 
 .. You can also get a string from a MutableSeq object just like from a Seq object (Section 3.4).
 
-You can also get a string from a MutableSeq object just like from a Seq object (Section 3.4).
+またMutableSeqオブジェクトも、Seqオブジェクトのように(Section 3.4)文字列を取得することができます。
 
 .. index::
    pair: 3.13  UnknownSeq objects;3.13  UnknownSeq objects
