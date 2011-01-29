@@ -109,7 +109,10 @@ class ExtractTextLinkParser(HTMLParser):
     def handle_data(self, data):
         if self.body:
             if not self.pre:
-                data = data.replace("\n","")
+                if len(data) != 1:
+                    data = data.replace("\n"," ")
+                else:
+                    data = data.replace("\n","")
             if data != "" and data != "\n":
 
                 self.text += data
