@@ -18,6 +18,7 @@ Biopythonドキュメント翻訳
    :maxdepth: 2
 
    chapter2
+   chapter3
 
 インデックス
 ==================
