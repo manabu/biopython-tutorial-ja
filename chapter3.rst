@@ -397,7 +397,7 @@ Python の文字列操作は、大文字小文字変換が非常に便利です�
     Seq('CGCTAAAAGCTAGGATATATCCGGGTAGCTAG', IUPACUnambiguousDNA())
 
 
-.. In all of these operations, the alphabet property is maintained. This is veryuseful in case you accidentally end up trying to do something weird like takethe (reverse)complement of a protein sequence:
+.. In all of these operations, the alphabet property is maintained. This is veryuseful in case you accidentally end up trying to do something weird like take the (reverse)complement of a protein sequence:
 
 これらすべての操作を行っても、アルファベットのプロパティは保持され続けます。これはたんぱく質シーケンスの(reverse)complement を誤って取得しようとした場合に有用です:
 
@@ -418,20 +418,34 @@ Section 5.5.3 では、Seqオブジェクトのreverse complementの組み合わ
 .. index::
    pair: 3.8  Transcription;3.8  Transcription
 
-3.8  Transcription
+3.8  転写
 ------------------
 
-.. Before talking about transcription, I want to try and clarify the strand issue.Consider the following (made up) stretch of double stranded DNA whichencodes a short peptide:
+.. Before talking about transcription, I want to try and clarify the strand issue.Consider the following (made up) stretch of double stranded DNA which encodes a short peptide:
 
-Before talking about transcription, I want to try and clarify the strand issue.Consider the following (made up) stretch of double stranded DNA whichencodes a short peptide:
+転写について話す前に、strand問題を明確にしたいと思います。次(の構成)の短いペプチドをエンコードした二本鎖DNAを考えてください:
 
 ..   DNA coding strand (aka Crick strand, strand +1) 5’ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG3’ ||||||||||||||||||||||||||||||||||||||| 3’TACCGGTAACATTACCCGGCGACTTTCCCACGGGCTATC5’ DNA template strand (aka Watson strand, strand 1)   |  Transcription    5’AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG3’ Single stranded messenger RNA  The actual biological transcription process works from the template strand, doing a reverse complement (TCAG  CUGA) to give the mRNA. However, in Biopython and bioinformatics in general, we typically work directly with the coding strand because this means we can get the mRNA sequence just by switching T  U.
 
-  DNA coding strand (aka Crick strand, strand +1) 5’ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG3’ ||||||||||||||||||||||||||||||||||||||| 3’TACCGGTAACATTACCCGGCGACTTTCCCACGGGCTATC5’ DNA template strand (aka Watson strand, strand 1)   |  Transcription    5’AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG3’ Single stranded messenger RNA  The actual biological transcription process works from the template strand, doing a reverse complement (TCAG  CUGA) to give the mRNA. However, in Biopython and bioinformatics in general, we typically work directly with the coding strand because this means we can get the mRNA sequence just by switching T  U.
+.. code-block:: python
+
+  DNA coding strand (aka Crick strand, strand +1)
+ 5’ ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG 3’
+    |||||||||||||||||||||||||||||||||||||||
+ 3’ TACCGGTAACATTACCCGGCGACTTTCCCACGGGCTATC 5’
+   DNA template strand (aka Watson strand, strand 1)
+                           |
+                      Transcription
+ 5’ AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG 3’
+       Single stranded messenger RNA
+
+.. The actual biological transcription process works from the template strand, doing a reverse complement (TCAG  CUGA) to give the mRNA. However, in Biopython and bioinformatics in general, we typically work directly with the coding strand because this means we can get the mRNA sequence just by switching T  U.
+
+The actual biological transcription process works from the template strand, doing a reverse complement (TCAG  CUGA) to give the mRNA. However, in Biopython and bioinformatics in general, we typically work directly with the coding strand because this means we can get the mRNA sequence just by switching T  U.
 
 .. Now let’s actually get down to doing a transcription in Biopython. First, let’s create Seq objects for the coding and template DNA strands:
 
-Now let’s actually get down to doing a transcription in Biopython. First, let’s create Seq objects for the coding and template DNA strands:
+では実際に Biopython で転写を実行してみましょう。まずはじめに、テンプレートDNA strandとなるSeqオブジェクトを作ります:
 
 .. code-block:: python
 
@@ -451,7 +465,7 @@ These should match the figure above - remember by convention nucleotide sequence
 
 .. Now let’s transcribe the coding strand into the corresponding mRNA, using the Seq object’s built in transcribe method:
 
-Now let’s transcribe the coding strand into the corresponding mRNA, using the Seq object’s built in transcribe method:
+では、Seqオブジェクトに組み込まれている transcribe() メソッドを使って、coding strand を対応する mRNAに転写してみましょう:
 
 .. code-block:: python
 
