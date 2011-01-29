@@ -90,7 +90,7 @@ Unless of course, this really is an amino acid sequence:
 
 .. In many ways, we can deal with Seq objects as if they were normal Python strings, for example getting the length, or iterating over the elements:
 
-In many ways, we can deal with Seq objects as if they were normal Python strings, for example getting the length, or iterating over the elements:
+いろいろな意味で、Seqオブジェクトを通常のPython stringのように扱うことができます。例えば、長さを取得したり要素をイテレートできます。:
 
 .. code-block:: python
 
@@ -115,7 +115,7 @@ You can access elements of the sequence in the same way as for strings (but reme
 
 .. The Seq object has a .count() method, just like a string.Note that this means that like a Python string, this gives anon-overlapping count:
 
-The Seq object has a .count() method, just like a string.Note that this means that like a Python string, this gives anon-overlapping count:
+Seqオブジェクトには、stringのように .count() メソッドがあります。Python のstringのように、重複したカウントを得ることができます:
 
 .. code-block:: python
 
@@ -127,7 +127,7 @@ The Seq object has a .count() method, just like a string.Note that this means th
 
 .. For some biological uses, you may actually want an overlapping count(i.e. 3 in this trivial example). When searching for single letters, thismakes no difference:
 
-For some biological uses, you may actually want an overlapping count(i.e. 3 in this trivial example). When searching for single letters, thismakes no difference:
+生物学的用法で、重複カウント(3つの簡単なサンプル)を得ることができます。1文字の時は、違いがありません:
 
 .. code-block:: python
 
@@ -141,7 +141,7 @@ For some biological uses, you may actually want an overlapping count(i.e. 3 in t
 
 .. While you could use the above snippet of code to calculate a GC%, note that the Bio.SeqUtils module has several GC functions already built. For example:
 
-While you could use the above snippet of code to calculate a GC%, note that the Bio.SeqUtils module has several GC functions already built. For example:
+上のコードで、GC%を計算することができましたが、Bio.SeqUtilsモジュールには、GCの関数がいくつか存在しています。例えば:
 
 .. code-block:: python
 
@@ -372,7 +372,7 @@ Python の文字列操作は、大文字小文字変換が非常に便利です�
 
 .. For nucleotide sequences, you can easily obtain the complement or reversecomplement of a Seq object using its built-in methods:
 
-For nucleotide sequences, you can easily obtain the complement or reversecomplement of a Seq object using its built-in methods:
+ヌクレオチドシーケンスについて、Seqオブジェクトのビルトインメソッドを使うことでcomplement, reversecomplementを簡単に得ることができます:
 
 .. code-block:: python
 
@@ -389,7 +389,7 @@ For nucleotide sequences, you can easily obtain the complement or reversecomplem
 
 .. As mentioned earlier, an easy way to just reverse a Seq object (or aPython string) is slice it with -1 step:
 
-As mentioned earlier, an easy way to just reverse a Seq object (or aPython string) is slice it with -1 step:
+以前述べたように、Seqオブジェクト(またはPythonのstring)のreverseを簡単に求める方法は、それ地震の-1ステップのsliceです:
 
 .. code-block:: python
 
