@@ -267,12 +267,12 @@ NOTE: Biopython 1.44 か、それ以前のバージョンをお使いの場合�
 .. index::
    pair: 3.5  Concatenating or adding sequences;3.5  Concatenating or adding sequences
 
-3.5  Concatenating or adding sequences
+3.5  シーケンスの連結、追加
 --------------------------------------
 
 .. Naturally, you can in principle add any two Seq objects together - just like you can with Python strings to concatenate them. However, you can’t add sequences with incompatible alphabets, such as a protein sequence and a DNA sequence:
 
-Naturally, you can in principle add any two Seq objects together - just like you can with Python strings to concatenate them. However, you can’t add sequences with incompatible alphabets, such as a protein sequence and a DNA sequence:
+もちろん、Python string で文字列を連結できるように、原則として2つのSeqオブジェクトを足すことができます。しかし、たんぱく質シーケンスとDNAシーケンスのように、互換性のないアルファベットのシーケンスをつなげることはできません:
 
 .. code-block:: python
 
@@ -284,7 +284,7 @@ Naturally, you can in principle add any two Seq objects together - just like you
 
 .. If you really wanted to do this, you’d have to first give both sequences generic alphabets:
 
-If you really wanted to do this, you’d have to first give both sequences generic alphabets:
+本当にこれをしたいなら、まず両方のシーケンスを一般的なアルファベットのシーケンスにする必要があります:
 
 .. code-block:: python
 
@@ -297,7 +297,7 @@ If you really wanted to do this, you’d have to first give both sequences gener
 
 .. Here is an example of adding a generic nucleotide sequence to an unambiguous IUPAC DNA sequence, resulting in an ambiguous nucleotide sequence:
 
-Here is an example of adding a generic nucleotide sequence to an unambiguous IUPAC DNA sequence, resulting in an ambiguous nucleotide sequence:
+ここでは例として、unambiguous IUPAC DNAシーケンスに、一般的なヌクレオチドシーケンスをつなげます。結果として、1つのunambiguous IUPAC DNAシーケンスが得られます:
 
 .. code-block:: python
 
