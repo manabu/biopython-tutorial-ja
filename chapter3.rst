@@ -399,7 +399,7 @@ Python の文字列操作は、大文字小文字変換が非常に便利です�
 
 .. In all of these operations, the alphabet property is maintained. This is veryuseful in case you accidentally end up trying to do something weird like takethe (reverse)complement of a protein sequence:
 
-In all of these operations, the alphabet property is maintained. This is veryuseful in case you accidentally end up trying to do something weird like takethe (reverse)complement of a protein sequence:
+これらすべての操作を行っても、アルファベットのプロパティは保持され続けます。これはたんぱく質シーケンスの(reverse)complement を誤って取得しようとした場合に有用です:
 
 .. code-block:: python
 
@@ -413,7 +413,7 @@ In all of these operations, the alphabet property is maintained. This is veryuse
 
 .. The example in Section 5.5.3 combines the Seqobject’s reverse complement method with Bio.SeqIO for sequence input/ouput.
 
-The example in Section 5.5.3 combines the Seqobject’s reverse complement method with Bio.SeqIO for sequence input/ouput.
+Section 5.5.3 では、Seqオブジェクトのreverse complementの組み合わせをシーケンスの入出力を行う Bio.SeqIO を使って説明します
 
 .. index::
    pair: 3.8  Transcription;3.8  Transcription
