@@ -50,7 +50,7 @@ Now that we know what we are dealing with, let’s look at how to utilize this c
     Seq('AGTACACTGGT', Alphabet())
     >>> my_seq.alphabet
     Alphabet()
-    
+
 
 .. However, where possible you should specify the alphabet explicitly when creating your sequence objects - in this case an unambiguous DNA alphabet object:
 
@@ -65,7 +65,7 @@ However, where possible you should specify the alphabet explicitly when creating
     Seq('AGTACACTGGT', IUPACUnambiguousDNA())
     >>> my_seq.alphabet
     IUPACUnambiguousDNA()
-    
+
 
 .. Unless of course, this really is an amino acid sequence:
 
@@ -80,7 +80,7 @@ Unless of course, this really is an amino acid sequence:
     Seq('AGTACACTGGT', IUPACProtein())
     >>> my_prot.alphabet
     IUPACProtein()
-    
+
 
 .. index::
    pair: 3.2  Sequences act like strings;3.2  Sequences act like strings
@@ -100,7 +100,7 @@ In many ways, we can deal with Seq objects as if they were normal Python strings
     for index, letter in enumerate(my_seq):
         print index, letter
     print len(letter)
-    
+
 
 .. You can access elements of the sequence in the same way as for strings (but remember, Python counts from zero!):
 
@@ -111,7 +111,7 @@ You can access elements of the sequence in the same way as for strings (but reme
     >>> print my_seq[0] #first letter
     >>> print my_seq[2] #third letter
     >>> print my_seq[-1] #last letter
-    
+
 
 .. The Seq object has a .count() method, just like a string.Note that this means that like a Python string, this gives anon-overlapping count:
 
@@ -123,7 +123,7 @@ The Seq object has a .count() method, just like a string.Note that this means th
     2
     >>> Seq("AAAA").count("AA")
     2
-    
+
 
 .. For some biological uses, you may actually want an overlapping count(i.e. 3 in this trivial example). When searching for single letters, thismakes no difference:
 
@@ -137,7 +137,7 @@ For some biological uses, you may actually want an overlapping count(i.e. 3 in t
     10
     >>> 100 * float(my_seq.count("G") + my_seq.count("C")) / len(my_seq)
     46.875
-    
+
 
 .. While you could use the above snippet of code to calculate a GC%, note that the Bio.SeqUtils module has several GC functions already built. For example:
 
@@ -151,7 +151,7 @@ While you could use the above snippet of code to calculate a GC%, note that the 
     >>> my_seq = Seq('GATCGATGGGCCTATATAGGATCGAAAATCGC', IUPAC.unambiguous_dna)
     >>> GC(my_seq)
     46.875
-    
+
 
 .. Note that using the Bio.SeqUtils.GC() function should automatically cope with mixed case sequences and the ambiguous nucleotide S which means G or C.
 
@@ -178,7 +178,7 @@ A more complicated example, let’s get a slice of the sequence:
     >>> my_seq = Seq("GATCGATGGGCCTATATAGGATCGAAAATCGC", IUPAC.unambiguous_dna)
     >>> my_seq[4:12]
     Seq('GATGGGCC', IUPACUnambiguousDNA())
-    
+
 
 .. Two things are interesting to note. First, this follows the normal conventions for Python strings. So the first element of the sequence is 0 (which is normal for computer science, but not so normal for biology). When you do a slice the first item is included (i.e. 4 in this case) and the last is excluded (12 in this case), which is the way things work in Python, but of course not necessarily the way everyone in the world would expect. The main goal is to stay consistent with what Python does.
 
@@ -200,7 +200,7 @@ Also like a Python string, you can do slices with a start, stop and stride (the 
     Seq('AGGCATGCATC', IUPACUnambiguousDNA())
     >>> my_seq[2::3]
     Seq('TAGCTAAGAC', IUPACUnambiguousDNA())
-    
+
 
 .. Another stride trick you might have seen with a Python string is the use of a -1 stride to reverse the string. You can do this with a Seq object too:
 
@@ -210,7 +210,7 @@ Another stride trick you might have seen with a Python string is the use of a -1
 
     >>> my_seq[::-1]
     Seq('CGCTAAAAGCTAGGATATATCCGGGTAGCTAG', IUPACUnambiguousDNA())
-    
+
 
 .. index::
    pair: 3.4  Turning Seq objects into strings;3.4  Turning Seq objects into strings
@@ -226,7 +226,7 @@ If you really do just need a plain string, for example to write to a file, or in
 
     >>> str(my_seq)
     'GATCGATGGGCCTATATAGGATCGAAAATCGC'
-    
+
 
 .. Since calling str() on a Seq object returns the full sequence as a string,you often don’t actually have to do this conversion explicitly.Python does this automatically with a print statement:
 
@@ -236,7 +236,7 @@ Since calling str() on a Seq object returns the full sequence as a string,you of
 
     >>> print my_seq
     GATCGATGGGCCTATATAGGATCGAAAATCGC
-    
+
 
 .. You can also use the Seq object directly with a %s placeholder when using the Python string formatting or interpolation operator (%):
 
@@ -248,7 +248,7 @@ You can also use the Seq object directly with a %s placeholder when using the Py
     >>> print fasta_format_string
     >Name
     GATCGATGGGCCTATATAGGATCGAAAATCGC
-    
+
 
 .. This line of code constructs a simple FASTA format record (without worrying about line wrapping).Section 4.5 describes a neat way to get a FASTA formattedstring from a SeqRecord object, while the more general topic of reading andwriting FASTA format sequence files is covered in Chapter 5.
 
@@ -262,7 +262,7 @@ NOTE: If you are using Biopython 1.44 or older, using str(my_seq)will give just 
 
     >>> my_seq.tostring()
     'GATCGATGGGCCTATATAGGATCGAAAATCGC'
-    
+
 
 .. index::
    pair: 3.5  Concatenating or adding sequences;3.5  Concatenating or adding sequences
@@ -280,7 +280,7 @@ Naturally, you can in principle add any two Seq objects together - just like you
     Traceback (most recent call last):
     ...
     TypeError: ('incompatable alphabets', 'IUPACProtein()', 'IUPACUnambiguousDNA()')
-    
+
 
 .. If you really wanted to do this, you’d have to first give both sequences generic alphabets:
 
@@ -293,7 +293,7 @@ If you really wanted to do this, you’d have to first give both sequences gener
     >>> dna_seq.alphabet = generic_alphabet
     >>> protein_seq + dna_seq
     Seq('EVRNAKACGT', Alphabet())
-    
+
 
 .. Here is an example of adding a generic nucleotide sequence to an unambiguous IUPAC DNA sequence, resulting in an ambiguous nucleotide sequence:
 
@@ -312,17 +312,17 @@ Here is an example of adding a generic nucleotide sequence to an unambiguous IUP
     Seq('ACGT', IUPACUnambiguousDNA())
     >>> nuc_seq + dna_seq
     Seq('GATCGATGCACGT', NucleotideAlphabet())
-    
+
 
 .. index::
    pair: 3.6  Changing case;3.6  Changing case
 
-3.6  Changing case
-------------------
+3.6  大文字小文字変換
+---------------------
 
 .. Python strings have very useful upper and lower methods for changing the case.As of Biopython 1.53, the Seq object gained similar methods which are alphabet aware.For example,
 
-Python strings have very useful upper and lower methods for changing the case.As of Biopython 1.53, the Seq object gained similar methods which are alphabet aware.For example,
+Python の文字列操作は、大文字小文字変換が非常に便利です。Biopython 1.53の、 Seq オブジェクトにも似たようなメソッドあります。例えば,
 
 .. code-block:: python
 
@@ -335,11 +335,11 @@ Python strings have very useful upper and lower methods for changing the case.As
     Seq('ACGTACGT', DNAAlphabet())
     >>> dna_seq.lower()
     Seq('acgtacgt', DNAAlphabet())
-    
+
 
 .. These are useful for doing case insensitive matching:
 
-These are useful for doing case insensitive matching:
+大文字小文字を無視したマッチングをするのに便利です。
 
 .. code-block:: python
 
@@ -347,11 +347,11 @@ These are useful for doing case insensitive matching:
     False
     >>> "GTAC" in dna_seq.upper()
     True
-    
+
 
 .. Note that strictly speaking the IUPAC alphabets are for upper casesequences only, thus:
 
-Note that strictly speaking the IUPAC alphabets are for upper casesequences only, thus:
+厳密にいえば、IUPACアルファベットは、大文字のみです。例えば:
 
 .. code-block:: python
 
@@ -362,7 +362,7 @@ Note that strictly speaking the IUPAC alphabets are for upper casesequences only
     Seq('ACGT', IUPACUnambiguousDNA())
     >>> dna_seq.lower()
     Seq('acgt', DNAAlphabet())
-    
+
 
 .. index::
    pair: 3.7  Nucleotide sequences and (reverse) complements;3.7  Nucleotide sequences and (reverse) complements
@@ -385,7 +385,7 @@ For nucleotide sequences, you can easily obtain the complement or reversecomplem
     Seq('CTAGCTACCCGGATATATCCTAGCTTTTAGCG', IUPACUnambiguousDNA())
     >>> my_seq.reverse_complement()
     Seq('GCGATTTTCGATCCTATATAGGCCCATCGATC', IUPACUnambiguousDNA())
-    
+
 
 .. As mentioned earlier, an easy way to just reverse a Seq object (or aPython string) is slice it with -1 step:
 
@@ -395,7 +395,7 @@ As mentioned earlier, an easy way to just reverse a Seq object (or aPython strin
 
     >>> my_seq[::-1]
     Seq('CGCTAAAAGCTAGGATATATCCGGGTAGCTAG', IUPACUnambiguousDNA())
-    
+
 
 .. In all of these operations, the alphabet property is maintained. This is veryuseful in case you accidentally end up trying to do something weird like takethe (reverse)complement of a protein sequence:
 
@@ -409,7 +409,7 @@ In all of these operations, the alphabet property is maintained. This is veryuse
     >>> protein_seq.complement()
     ...
     ValueError: Proteins do not have complements!
-    
+
 
 .. The example in Section 5.5.3 combines the Seqobject’s reverse complement method with Bio.SeqIO for sequence input/ouput.
 
@@ -443,7 +443,7 @@ Now let’s actually get down to doing a transcription in Biopython. First, let�
     >>> template_dna = coding_dna.reverse_complement()
     >>> template_dna
     Seq('CTATCGGGCACCCTTTCAGCGGCCCATTACAATGGCCAT', IUPACUnambiguousDNA())
-    
+
 
 .. These should match the figure above - remember by convention nucleotide sequences are normally read from the 5’ to 3’ direction, while in the figure the template strand is shown reversed.
 
@@ -460,7 +460,7 @@ Now let’s transcribe the coding strand into the corresponding mRNA, using the 
     >>> messenger_rna = coding_dna.transcribe()
     >>> messenger_rna
     Seq('AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG', IUPACUnambiguousRNA())
-    
+
 
 .. As you can see, all this does is switch T  U, and adjust the alphabet.
 
@@ -474,7 +474,7 @@ If you do want to do a true biological transcription starting with the template 
 
     >>> template_dna.reverse_complement().transcribe()
     Seq('AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG', IUPACUnambiguousRNA())
-    
+
 
 .. The Seq object also includes a back-transcription method for going from the mRNA to the coding strand of the DNA. Again, this is a simple U  T substitution and associated change of alphabet:
 
@@ -489,7 +489,7 @@ The Seq object also includes a back-transcription method for going from the mRNA
     Seq('AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG', IUPACUnambiguousRNA())
     >>> messenger_rna.back_transcribe()
     Seq('ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG', IUPACUnambiguousDNA())
-    
+
 
 .. Note: The Seq object’s transcribe and back_transcribe methodswere added in Biopython 1.49. For older releases you would have to use the Bio.Seqmodule’s functions instead, see Section 3.14.
 
@@ -514,7 +514,7 @@ Sticking with the same example discussed in the transcription section above,now 
     Seq('AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG', IUPACUnambiguousRNA())
     >>> messenger_rna.translate()
     Seq('MAIVMGR*KGAR*', HasStopCodon(IUPACProtein(), '*'))
-    
+
 
 .. You can also translate directly from the coding strand DNA sequence:
 
@@ -529,7 +529,7 @@ You can also translate directly from the coding strand DNA sequence:
     Seq('ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG', IUPACUnambiguousDNA())
     >>> coding_dna.translate()
     Seq('MAIVMGR*KGAR*', HasStopCodon(IUPACProtein(), '*'))
-    
+
 
 .. You should notice in the above protein sequences that in addition to the end stop character, there is an internal stop as well. This was a deliberate choice of example, as it gives an excuse to talk about some optional arguments, including different translation tables (Genetic Codes).
 
@@ -543,7 +543,7 @@ The translation tables available in Biopython are based on those from the NCBI (
 
     >>> coding_dna.translate(table="Vertebrate Mitochondrial")
     Seq('MAIVMGRWKGAR*', HasStopCodon(IUPACProtein(), '*'))
-    
+
 
 .. You can also specify the table using the NCBI table number which is shorter, and often included in the feature annotation of GenBank files:
 
@@ -553,7 +553,7 @@ You can also specify the table using the NCBI table number which is shorter, and
 
     >>> coding_dna.translate(table=2)
     Seq('MAIVMGRWKGAR*', HasStopCodon(IUPACProtein(), '*'))
-    
+
 
 .. Now, you may want to translate the nucleotides up to the first in frame stop codon,and then stop (as happens in nature):
 
@@ -569,7 +569,7 @@ Now, you may want to translate the nucleotides up to the first in frame stop cod
     Seq('MAIVMGRWKGAR*', HasStopCodon(IUPACProtein(), '*'))
     >>> coding_dna.translate(table=2, to_stop=True)
     Seq('MAIVMGRWKGAR', IUPACProtein())
-    
+
 
 .. Notice that when you use the to_stop argument, the stop codon itselfis not translated - and the stop symbol is not included at the end of your proteinsequence.
 
@@ -583,7 +583,7 @@ You can even specify the stop symbol if you don’t like the default asterisk:
 
     >>> coding_dna.translate(table=2, stop_symbol="@")
     Seq('MAIVMGRWKGAR@', HasStopCodon(IUPACProtein(), '@'))
-    
+
 
 .. Now, suppose you have a complete coding sequence CDS, which is to say anucleotide sequence (e.g. mRNA  after any splicing) which is a whole numberof codons (i.e. the length is a multiple of three), commences with a startcodon, ends with a stop codon, and has no internal in-frame stop codons.In general, given a complete CDS, the default translate method will do whatyou want (perhaps with the to_stop option). However, what if yoursequence uses a non-standard start codon? This happens a lot in bacteria for example the gene yaaX in E. coli K12:
 
@@ -603,7 +603,7 @@ Now, suppose you have a complete coding sequence CDS, which is to say anucleotid
     >>> gene.translate(table="Bacterial", to_stop=True)
     Seq('VKKMQSIVLALSLVLVAPMAAQAAEITLVPSVKLQIGDRDNRGYYWDGGHWRDH...HHR',
     ExtendedIUPACProtein())
-    
+
 
 .. In the bacterial genetic code GTG is a valid start codon,and while it does normally encode valine, if used as a start codon itshould be translated as methionine. This happens if you tell Biopython yoursequence is a complete CDS:
 
@@ -614,7 +614,7 @@ In the bacterial genetic code GTG is a valid start codon,and while it does norma
     >>> gene.translate(table="Bacterial", cds=True)
     Seq('MKKMQSIVLALSLVLVAPMAAQAAEITLVPSVKLQIGDRDNRGYYWDGGHWRDH...HHR',
     ExtendedIUPACProtein())
-    
+
 
 .. In addition to telling Biopython to translate an alternative start codon asmethionine, using this option also makes sure your sequence really is a validCDS (you’ll get an exception if not).
 
@@ -638,16 +638,16 @@ Note: The Seq object’s translate method is new in Biopython 1.49.For older rel
 
 In the previous sections we talked about the Seq object translation method (and mentioned the equivalent function in the Bio.Seq module  seeSection 3.14).Internally these use codon table objects derived from the NCBI information atftp://ftp.ncbi.nlm.nih.gov/entrez/misc/data/gc.prt, also shown onhttp://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi in a much more readable layout.
 
-.. As before, let’s just focus on two choices: the Standard translation table, and thetranslation table for Vertebrate Mitochondrial DNA. 
+.. As before, let’s just focus on two choices: the Standard translation table, and thetranslation table for Vertebrate Mitochondrial DNA.
 
-As before, let’s just focus on two choices: the Standard translation table, and thetranslation table for Vertebrate Mitochondrial DNA. 
+As before, let’s just focus on two choices: the Standard translation table, and thetranslation table for Vertebrate Mitochondrial DNA.
 
 .. code-block:: python
 
     >>> from Bio.Data import CodonTable
     >>> standard_table = CodonTable.unambiguous_dna_by_name["Standard"]
     >>> mito_table = CodonTable.unambiguous_dna_by_name["Vertebrate Mitochondrial"]
-    
+
 
 .. Alternatively, these tables are labeled with ID numbers 1 and 2, respectively:
 
@@ -658,7 +658,7 @@ Alternatively, these tables are labeled with ID numbers 1 and 2, respectively:
     >>> from Bio.Data import CodonTable
     >>> standard_table = CodonTable.unambiguous_dna_by_id[1]
     >>> mito_table = CodonTable.unambiguous_dna_by_id[2]
-    
+
 
 .. You can compare the actual tables visually by printing them:
 
@@ -668,7 +668,7 @@ You can compare the actual tables visually by printing them:
 
     >>> print standard_table
     Table 1 Standard, SGC0
-    
+
       |  T      |  C      |  A      |  G      |
     --+---------+---------+---------+---------+--
     T | TTT F   | TCT S   | TAT Y   | TGT C   | T
@@ -691,7 +691,7 @@ You can compare the actual tables visually by printing them:
     G | GTA V   | GCA A   | GAA E   | GGA G   | A
     G | GTG V   | GCG A   | GAG E   | GGG G   | G
     --+---------+---------+---------+---------+--
-    
+
 
 .. and:
 
@@ -701,7 +701,7 @@ and:
 
     >>> print mito_table
     Table 2 Vertebrate Mitochondrial, SGC1
-    
+
       |  T      |  C      |  A      |  G      |
     --+---------+---------+---------+---------+--
     T | TTT F   | TCT S   | TAT Y   | TGT C   | T
@@ -724,7 +724,7 @@ and:
     G | GTA V   | GCA A   | GAA E   | GGA G   | A
     G | GTG V(s)| GCG A   | GAG E   | GGG G   | G
     --+---------+---------+---------+---------+--
-    
+
 
 .. You may find these following properties useful  for example if you are tryingto do your own gene finding:
 
@@ -738,7 +738,7 @@ You may find these following properties useful  for example if you are tryingto 
     ['ATT', 'ATC', 'ATA', 'ATG', 'GTG']
     >>> mito_table.forward_table["ACG"]
     'T'
-    
+
 
 .. index::
    pair: 3.11  Comparing Seq objects;3.11  Comparing Seq objects
@@ -772,7 +772,7 @@ So, what does Biopython do? Well, the equality test is the default for Pythonobj
     False
     >>> seq1 == seq1
     True
-    
+
 
 .. If you actually want to do this, you can be more explicit by using the Pythonid function,
 
@@ -784,7 +784,7 @@ If you actually want to do this, you can be more explicit by using the Pythonid 
     False
     >>> id(seq1) == id(seq1)
     True
-    
+
 
 .. Now, in every day use, your sequences will probably all have the samealphabet, or at least all be the same type of sequence (all DNA, all RNA, orall protein). What you probably want is to just compare the sequences asstrings  so do this explicitly:
 
@@ -796,7 +796,7 @@ Now, in every day use, your sequences will probably all have the samealphabet, o
     True
     >>> str(seq1) == str(seq1)
     True
-    
+
 
 .. As an extension to this, while you can use a Python dictionary withSeq objects as keys, it is generally more useful to use the sequence astring for the key. See also Section 3.4.
 
@@ -821,7 +821,7 @@ Just like the normal Python string, the Seq object is “read only”, or in Pyt
     Traceback (most recent call last):
       File "<stdin>", line 1, in ?
     AttributeError: 'Seq' instance has no attribute '__setitem__'
-    
+
 
 .. However, you can convert it into a mutable sequence (a MutableSeq object) and do pretty much anything you want with it:
 
@@ -832,7 +832,7 @@ However, you can convert it into a mutable sequence (a MutableSeq object) and do
     >>> mutable_seq = my_seq.tomutable()
     >>> mutable_seq
     MutableSeq('GCCATTGTAATGGGCCGCTGAAAGGGTGCCCGA', IUPACUnambiguousDNA())
-    
+
 
 .. Alternatively, you can create a MutableSeq object directly from a string:
 
@@ -843,7 +843,7 @@ Alternatively, you can create a MutableSeq object directly from a string:
     >>> from Bio.Seq import MutableSeq
     >>> from Bio.Alphabet import IUPAC
     >>> mutable_seq = MutableSeq("GCCATTGTAATGGGCCGCTGAAAGGGTGCCCGA", IUPAC.unambiguous_dna)
-    
+
 
 .. Either way will give you a sequence object which can be changed:
 
@@ -862,7 +862,7 @@ Either way will give you a sequence object which can be changed:
     >>> mutable_seq.reverse()
     >>> mutable_seq
     MutableSeq('AGCCCGTGGGAAAGTCGCCGGGTAATGTACCG', IUPACUnambiguousDNA())
-    
+
 
 .. Do note that unlike the Seq object, the MutableSeq object’s methods like reverse_complement() and reverse() act in-situ!
 
@@ -881,7 +881,7 @@ Once you have finished editing your a MutableSeq object, it’s easy to get back
     >>> new_seq = mutable_seq.toseq()
     >>> new_seq
     Seq('AGCCCGTGGGAAAGTCGCCGGGTAATGTACCG', IUPACUnambiguousDNA())
-    
+
 
 .. You can also get a string from a MutableSeq object just like from a Seq object (Section 3.4).
 
@@ -907,7 +907,7 @@ Biopython 1.50 introduced another basic sequence object, the UnknownSeq object.T
     ????????????????????
     >>> len(unk)
     20
-    
+
 
 .. You can of course specify an alphabet, meaning for nucleotide sequencesthe letter defaults to “N” and for proteins “X”, rather than just “?”.
 
@@ -922,7 +922,7 @@ You can of course specify an alphabet, meaning for nucleotide sequencesthe lette
     UnknownSeq(20, alphabet = IUPACAmbiguousDNA(), character = 'N')
     >>> print unk_dna
     NNNNNNNNNNNNNNNNNNNN
-    
+
 
 .. You can use all the usual Seq object methods too, note these give backmemory saving UnknownSeq objects where appropriate as you might expect:
 
@@ -945,7 +945,7 @@ You can use all the usual Seq object methods too, note these give backmemory sav
     XXXXXX
     >>> len(unk_protein)
     6
-    
+
 
 .. You may be able to find a use for the UnknownSeq object in your owncode, but it is more likely that you will first come across them in aSeqRecord object created by Bio.SeqIO(see Chapter 5).Some sequence file formats don’t always include the actual sequence, forexample GenBank and EMBL files may include a list of features but for thesequence just present the contig information. Alternatively, the QUAL filesused in sequencing work hold quality scores but they never contain asequence  instead there is a partner FASTA file which does have thesequence.
 
@@ -973,7 +973,7 @@ To close this chapter, for those you who really don’t want to use the sequence
     'GCTGTTATGGGTCGTTGGAAGGGTGGTCGTGCTGCTGGTTAG'
     >>> translate(my_string)
     'AVMGRWKGGRAAG*'
-    
+
 
 .. You are, however, encouraged to work with Seq objects by default.
 
