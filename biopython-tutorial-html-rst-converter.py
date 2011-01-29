@@ -21,7 +21,7 @@ class ExtractTextLinkParser(HTMLParser):
 
     def filewrite(self, data):
         if self.isWrite:
-            self.file.write(data)
+            self.file.write(data.replace("`","\`"))
             self.file.write("\n")
 
     def fileopen(self, filename):
