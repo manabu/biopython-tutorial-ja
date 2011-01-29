@@ -478,11 +478,11 @@ These should match the figure above - remember by convention nucleotide sequence
 
 .. As you can see, all this does is switch T  U, and adjust the alphabet.
 
-As you can see, all this does is switch T  U, and adjust the alphabet.
+見て分かるように、やっていることはTをUに変えて、アルファベットを補正しました
 
 .. If you do want to do a true biological transcription starting with the template strand, then this becomes a two-step process:
 
-If you do want to do a true biological transcription starting with the template strand, then this becomes a two-step process:
+もしtemplate strandからはじめて生物学の本来の転写を行いたいなら、２段階のプロセスになります:
 
 .. code-block:: python
 
@@ -512,7 +512,7 @@ Note: The Seq object’s transcribe and back_transcribe methodswere added in Bio
 .. index::
    pair: 3.9  Translation;3.9  Translation
 
-3.9  Translation
+3.9  翻訳
 ----------------
 
 .. Sticking with the same example discussed in the transcription section above,now let’s translate this mRNA into the corresponding protein sequence - again takingadvantage of one of the Seq object’s biological methods:
@@ -561,7 +561,7 @@ The translation tables available in Biopython are based on those from the NCBI (
 
 .. You can also specify the table using the NCBI table number which is shorter, and often included in the feature annotation of GenBank files:
 
-You can also specify the table using the NCBI table number which is shorter, and often included in the feature annotation of GenBank files:
+また、簡単にNCBIのテーブル番号を使ってテーブルを指定することもできます。これはより短く、GenBankファイルのfeature annoationを含んでいることがしばしばあります:
 
 .. code-block:: python
 
@@ -591,7 +591,7 @@ Notice that when you use the to_stop argument, the stop codon itselfis not trans
 
 .. You can even specify the stop symbol if you don’t like the default asterisk:
 
-You can even specify the stop symbol if you don’t like the default asterisk:
+デフォルトのアスタリスクが嫌ならば、stop symbolを指定することもできます:
 
 .. code-block:: python
 
@@ -645,16 +645,16 @@ Note: The Seq object’s translate method is new in Biopython 1.49.For older rel
 .. index::
    pair: 3.10  Translation Tables;3.10  Translation Tables
 
-3.10  Translation Tables
+3.10  翻訳テーブル
 ------------------------
 
 .. In the previous sections we talked about the Seq object translation method (and mentioned the equivalent function in the Bio.Seq module  seeSection 3.14).Internally these use codon table objects derived from the NCBI information atftp://ftp.ncbi.nlm.nih.gov/entrez/misc/data/gc.prt, also shown onhttp://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi in a much more readable layout.
 
 In the previous sections we talked about the Seq object translation method (and mentioned the equivalent function in the Bio.Seq module  seeSection 3.14).Internally these use codon table objects derived from the NCBI information atftp://ftp.ncbi.nlm.nih.gov/entrez/misc/data/gc.prt, also shown onhttp://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi in a much more readable layout.
 
-.. As before, let’s just focus on two choices: the Standard translation table, and thetranslation table for Vertebrate Mitochondrial DNA.
+.. As before, let’s just focus on two choices: the Standard translation table, and the translation table for Vertebrate Mitochondrial DNA.
 
-As before, let’s just focus on two choices: the Standard translation table, and thetranslation table for Vertebrate Mitochondrial DNA.
+前と同じように、標準翻訳テーブルと、Vertebrate Mitochondrial DNAに対する翻訳テーブルの、2つの選択肢に焦点を当てましょう。
 
 .. code-block:: python
 
