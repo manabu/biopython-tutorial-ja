@@ -839,7 +839,7 @@ Now, in every day use, your sequences will probably all have the samealphabet, o
 
 .. However, you can convert it into a mutable sequence (a MutableSeq object) and do pretty much anything you want with it:
 
-However, you can convert it into a mutable sequence (a MutableSeq object) and do pretty much anything you want with it:
+しかしながら、これを変更可能なシーケンス(MutableSeqオブジェクト)へ変更することも可能で、なんでも行うことができます:
 
 .. code-block:: python
 
