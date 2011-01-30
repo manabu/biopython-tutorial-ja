@@ -812,9 +812,9 @@ Now, in every day use, your sequences will probably all have the samealphabet, o
     True
 
 
-.. As an extension to this, while you can use a Python dictionary withSeq objects as keys, it is generally more useful to use the sequence astring for the key. See also Section 3.4.
+.. As an extension to this, while you can use a Python dictionary with Seq objects as keys, it is generally more useful to use the sequence a string for the key. See also Section 3.4.
 
-As an extension to this, while you can use a Python dictionary withSeq objects as keys, it is generally more useful to use the sequence astring for the key. See also Section 3.4.
+これを拡張して、SeqオブジェクトをPythonの辞書のキーにすることができます。一般的にキーとして文字列を用いるより便利です。Section 3.4 を見てください。
 
 .. index::
    pair: 3.12  MutableSeq objects;3.12  MutableSeq objects
@@ -824,7 +824,7 @@ As an extension to this, while you can use a Python dictionary withSeq objects a
 
 .. Just like the normal Python string, the Seq object is “read only”, or in Python terminology, immutable. Apart from wanting the Seq object to act like a string, this is also a useful default since in many biological applications you want to ensure you are not changing your sequence data:
 
-Just like the normal Python string, the Seq object is “read only”, or in Python terminology, immutable. Apart from wanting the Seq object to act like a string, this is also a useful default since in many biological applications you want to ensure you are not changing your sequence data:
+通常のPython文字列のように、Seqオブジェクトは"読み込み専用"です。Pythonでいうところのimmutableです。 SeqオブジェクトがPythonのstringのように振る舞うことから離れたとしても、たくさんの生物学的アプリケーションで、シーケンスデータが変更されないことを確認することができるので便利です:
 
 .. code-block:: python
 
@@ -850,7 +850,7 @@ However, you can convert it into a mutable sequence (a MutableSeq object) and do
 
 .. Alternatively, you can create a MutableSeq object directly from a string:
 
-Alternatively, you can create a MutableSeq object directly from a string:
+また、文字列から直接 MutableSeq オブジェクトを作ることができます:
 
 .. code-block:: python
 
@@ -861,7 +861,7 @@ Alternatively, you can create a MutableSeq object directly from a string:
 
 .. Either way will give you a sequence object which can be changed:
 
-Either way will give you a sequence object which can be changed:
+いずれかの方法で、変更可能なシーケンスオブジェクトを取得できます:
 
 .. code-block:: python
 
