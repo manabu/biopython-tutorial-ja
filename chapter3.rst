@@ -904,8 +904,8 @@ MutableSeqオブジェクトを編集し終えたら、読み込み専用のSeq�
 .. index::
    pair: 3.13  UnknownSeq objects;3.13  UnknownSeq objects
 
-3.13  UnknownSeq objects
-------------------------
+3.13  UnknownSeq オブジェクト
+-----------------------------
 
 .. Biopython 1.50 introduced another basic sequence object, the UnknownSeq object.This is a subclass of the basic Seq object and its purpose is to represent asequence where we know the length, but not the actual letters making it up.You could of course use a normal Seq object in this situation, but it wastesrather a lot of memory to hold a string of a million “N” characters when you couldjust store a single letter “N” and the desired length as an integer.
 
