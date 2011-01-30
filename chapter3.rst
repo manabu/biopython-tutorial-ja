@@ -186,7 +186,7 @@ Two things are interesting to note. First, this follows the normal conventions f
 
 .. The second thing to notice is that the slice is performed on the sequence data string, but the new object produced is another Seq object which retains the alphabet information from the original Seq object.
 
-The second thing to notice is that the slice is performed on the sequence data string, but the new object produced is another Seq object which retains the alphabet information from the original Seq object.
+２番目に、シーケンスデータ文字列に対して行われたsliceの結果得られた新しいオブジェクトは、元のSeqオブジェクトからのアルファベットの情報を持った別のSeqオブジェクトです。
 
 .. Also like a Python string, you can do slices with a start, stop and stride (the step size, which defaults to one). For example, we can get the first, second and third codon positions of this DNA sequence:
 
@@ -532,7 +532,7 @@ Sticking with the same example discussed in the transcription section above,now 
 
 .. You can also translate directly from the coding strand DNA sequence:
 
-You can also translate directly from the coding strand DNA sequence:
+また、coding strand DNA strandから直接翻訳することもできます:
 
 .. code-block:: python
 
@@ -551,7 +551,7 @@ You should notice in the above protein sequences that in addition to the end sto
 
 .. The translation tables available in Biopython are based on those from the NCBI (see the next section of this tutorial). By default, translation will use the standard genetic code (NCBI table id 1).Suppose we are dealing with a mitochondrial sequence. We need to tell the translation function to use the relevant genetic code instead:
 
-The translation tables available in Biopython are based on those from the NCBI (see the next section of this tutorial). By default, translation will use the standard genetic code (NCBI table id 1).Suppose we are dealing with a mitochondrial sequence. We need to tell the translation function to use the relevant genetic code instead:
+Biopythonでは、NCBI (このチュートリアルの次のセクションで扱います) の翻訳テーブルを利用することができます。デフォルトでは、翻訳において、標準遺伝コード(NCBIテーブルid 1)を使います。もしミトコンドリアのシーケンスを扱おうとするならば、代わりに関連した遺伝コードを使うことをtranslation関数に伝える必要があります:
 
 .. code-block:: python
 
@@ -634,9 +634,9 @@ In the bacterial genetic code GTG is a valid start codon,and while it does norma
 
 In addition to telling Biopython to translate an alternative start codon asmethionine, using this option also makes sure your sequence really is a validCDS (you’ll get an exception if not).
 
-.. The example in Section 16.1.2 combines the Seq object’stranslate method with Bio.SeqIO for sequence input/ouput.
+.. The example in Section 16.1.2 combines the Seq object’s translate method with Bio.SeqIO for sequence input/ouput.
 
-The example in Section 16.1.2 combines the Seq object’stranslate method with Bio.SeqIO for sequence input/ouput.
+The example in Section 16.1.2 combines the Seq object’s translate method with Bio.SeqIO for sequence input/ouput.
 
 .. Note: The Seq object’s translate method is new in Biopython 1.49.For older releases you would have to use the Bio.Seq module’s translatefunction instead, see Section 3.14. The cds optionwas added in Biopython 1.51, and there is no simple way to do this with older versionsof Biopython.
 
@@ -757,8 +757,8 @@ You may find these following properties useful  for example if you are trying to
 .. index::
    pair: 3.11  Comparing Seq objects;3.11  Comparing Seq objects
 
-3.11  Comparing Seq objects
----------------------------
+3.11  Seq オブジェクトを比較する
+--------------------------------
 
 .. Sequence comparison is actually a very complicated topic, and there is no easyway to decide if two sequences are equal. The basic problem is the meaning ofthe letters in a sequence are context dependent - the letter “A” could be partof a DNA, RNA or protein sequence. Biopython uses alphabet objects as part ofeach Seq object to try and capture this information - so comparing twoSeq objects means considering both the sequence strings and thealphabets.
 
@@ -788,9 +788,9 @@ So, what does Biopython do? Well, the equality test is the default for Pythonobj
     True
 
 
-.. If you actually want to do this, you can be more explicit by using the Pythonid function,
+.. If you actually want to do this, you can be more explicit by using the Python id function,
 
-If you actually want to do this, you can be more explicit by using the Pythonid function,
+もしこれを本当にやりたいのであれば、Pythonのid関数を使うことで明示的に行うことができます。
 
 .. code-block:: python
 
