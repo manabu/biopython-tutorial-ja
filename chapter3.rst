@@ -104,7 +104,7 @@ Unless of course, this really is an amino acid sequence:
 
 .. You can access elements of the sequence in the same way as for strings (but remember, Python counts from zero!):
 
-You can access elements of the sequence in the same way as for strings (but remember, Python counts from zero!):
+文字列に対して行うのと同じ方法で、シーケンスの要素にアクセスすることができます(ただしPythonは0からカウントすることを覚えておいてください!):
 
 .. code-block:: python
 
@@ -938,9 +938,9 @@ You can of course specify an alphabet, meaning for nucleotide sequencesthe lette
     NNNNNNNNNNNNNNNNNNNN
 
 
-.. You can use all the usual Seq object methods too, note these give backmemory saving UnknownSeq objects where appropriate as you might expect:
+.. You can use all the usual Seq object methods too, note these give back memory saving UnknownSeq objects where appropriate as you might expect:
 
-You can use all the usual Seq object methods too, note these give backmemory saving UnknownSeq objects where appropriate as you might expect:
+You can use all the usual Seq object methods too, note these give back memory saving UnknownSeq objects where appropriate as you might expect:
 
 .. code-block:: python
 
