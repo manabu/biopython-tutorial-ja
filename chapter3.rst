@@ -772,9 +772,9 @@ For example, you might argue that the two DNA Seq objectsSeq("ACGT", IUPAC.unamb
 
 This gets worse  suppose you think Seq("ACGT",IUPAC.unambiguous_dna) and Seq("ACGT") (i.e. the default genericalphabet) should be equal. Then, logically, Seq("ACGT", IUPAC.protein)and Seq("ACGT") should also be equal. Now, in logic if A=B andB=C, by transitivity we expect A=C. So for logical consistency we’drequire Seq("ACGT", IUPAC.unambiguous_dna) and Seq("ACGT",IUPAC.protein) to be equal  which most people would agree is just not right.This transitivity problem would also have implications for using Seqobjects as Python dictionary keys.
 
-.. So, what does Biopython do? Well, the equality test is the default for Pythonobjects  it tests to see if they are the same object in memory. This is avery strict test:
+.. So, what does Biopython do? Well, the equality test is the default for Python objects  it tests to see if they are the same object in memory. This is avery strict test:
 
-So, what does Biopython do? Well, the equality test is the default for Pythonobjects  it tests to see if they are the same object in memory. This is avery strict test:
+Biopython は何をするのでしょうか？Pythonオブジェクトに対して、デフォルトでは、等価テストです。これは、メモリ上で同一のオブジェクトかを調べます。これは非常に厳格なテストです:
 
 .. code-block:: python
 
