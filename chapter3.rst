@@ -742,7 +742,7 @@ In the previous sections we talked about the Seq object translation method (and 
 
 .. You may find these following properties useful  for example if you are trying to do your own gene finding:
 
-You may find these following properties useful  for example if you are trying to do your own gene finding:
+例えば、自分の遺伝子を見つけようとしたときに、次のようなプロパティが便利だと気づくかもしれません:
 
 .. code-block:: python
 
