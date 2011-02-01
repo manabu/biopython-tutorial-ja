@@ -923,9 +923,9 @@ Biopython 1.50 introduced another basic sequence object, the UnknownSeq object.T
     20
 
 
-.. You can of course specify an alphabet, meaning for nucleotide sequencesthe letter defaults to “N” and for proteins “X”, rather than just “?”.
+.. You can of course specify an alphabet, meaning for nucleotide sequences the letter defaults to “N” and for proteins “X”, rather than just “?”.
 
-You can of course specify an alphabet, meaning for nucleotide sequencesthe letter defaults to “N” and for proteins “X”, rather than just “?”.
+もちろん"?"ではなく、ヌクレオチドシーケンスに対しては、"N"、プロテインには"?"と、アルファベットを指定することができます。
 
 .. code-block:: python
 
