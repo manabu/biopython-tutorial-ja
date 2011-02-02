@@ -819,8 +819,8 @@ Now, in every day use, your sequences will probably all have the samealphabet, o
 .. index::
    pair: 3.12  MutableSeq objects;3.12  MutableSeq objects
 
-3.12  MutableSeq objects
-------------------------
+3.12  MutableSeq オブジェクト
+-----------------------------
 
 .. Just like the normal Python string, the Seq object is “read only”, or in Python terminology, immutable. Apart from wanting the Seq object to act like a string, this is also a useful default since in many biological applications you want to ensure you are not changing your sequence data:
 
@@ -973,7 +973,7 @@ You may be able to find a use for the UnknownSeq object in your owncode, but it 
 
 .. To close this chapter, for those you who really don’t want to use the sequenceobjects (or who prefer a functional programming style to an object orientated one),there are module level functions in Bio.Seq will accept plain Python strings,Seq objects (including UnknownSeq objects) or MutableSeq objects:
 
-To close this chapter, for those you who really don’t want to use the sequenceobjects (or who prefer a functional programming style to an object orientated one),there are module level functions in Bio.Seq will accept plain Python strings,Seq objects (including UnknownSeq objects) or MutableSeq objects:
+この章を閉めるに当たって、シーケンスオブジェクトを望まない（または関数型プログラミングのスタイルをオブジェクト指向より好む人）のために、Bio.Seqには、Pythonのstring、Seqオブジェクト(UnknownSeqオブジェクトも含めて)、MutableSeqオブジェクトを受け入れる、モジュールレベルの機能があります:
 
 .. code-block:: python
 
@@ -991,5 +991,5 @@ To close this chapter, for those you who really don’t want to use the sequence
 
 .. You are, however, encouraged to work with Seq objects by default.
 
-You are, however, encouraged to work with Seq objects by default.
+とはいえ、デフォルトでは、Seqオブジェクトを使うことを推奨しています。
 
