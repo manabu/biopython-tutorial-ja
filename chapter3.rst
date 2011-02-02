@@ -940,7 +940,7 @@ Biopython 1.50 introduced another basic sequence object, the UnknownSeq object.T
 
 .. You can use all the usual Seq object methods too, note these give back memory saving UnknownSeq objects where appropriate as you might expect:
 
-You can use all the usual Seq object methods too, note these give back memory saving UnknownSeq objects where appropriate as you might expect:
+また通常のSeqオブジェクトのメソッドも使うことができます。これは期待したように、UnknownSeqオブジェクトが使うメモリを節約します:
 
 .. code-block:: python
 
