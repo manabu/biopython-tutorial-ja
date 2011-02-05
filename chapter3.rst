@@ -40,7 +40,7 @@ The advantages of having an alphabet class are two fold. First, this gives an id
 
 .. Now that we know what we are dealing with, let’s look at how to utilize this class to do interesting work.You can create an ambiguous sequence with the default generic alphabet like this:
 
-Now that we know what we are dealing with, let’s look at how to utilize this class to do interesting work.You can create an ambiguous sequence with the default generic alphabet like this:
+何を扱っているかわかったので、これをどのように使うか見ていきましょう。標準の汎用アルファベットを使うと次の用にして、シーケンスを作ることができます:
 
 .. code-block:: python
 
