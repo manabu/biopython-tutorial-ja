@@ -14,7 +14,7 @@ Biological sequences are arguably the central object in Bioinformatics, and in t
 
 .. Sequences are essentially strings of letters like AGTACACTGGT, which seems very natural since this is the most common way that sequences are seen in biological file formats.
 
-Sequences are essentially strings of letters like AGTACACTGGT, which seems very natural since this is the most common way that sequences are seen in biological file formats.
+シーケンスは、本質的には、 AGTACACTGGTのような文字列で、生物学的なファイル形式でよく用いられる書き方です。
 
 .. There are two important differences between Seq objects and standard Python strings.First of all, they have different methods. Although the Seq object supports many of the same methods as a plain string, its translate() method differs by doing biological translation, and there are also additional biologically relevant methods like reverse_complement().Secondly, the Seq object has an important attribute, alphabet, which is an object describing what the individual characters making up the sequence string “mean”, and how they should be interpreted. For example, is AGTACACTGGT a DNA sequence, or just a protein sequence that happens to be rich in Alanines, Glycines, Cysteines and Threonines?
 
@@ -28,7 +28,7 @@ SeqオブジェクトとPython sting には大きく2つの違いがあります
 
 .. The alphabet object is perhaps the important thing that makes the Seq object more than just a string. The currently available alphabets for Biopython are defined in the Bio.Alphabet module. We’ll use the IUPAC alphabets (http://www.chem.qmw.ac.uk/iupac/) here to deal with some of our favorite objects: DNA, RNA and Proteins.
 
-The alphabet object is perhaps the important thing that makes the Seq object more than just a string. The currently available alphabets for Biopython are defined in the Bio.Alphabet module. We’ll use the IUPAC alphabets (http://www.chem.qmw.ac.uk/iupac/) here to deal with some of our favorite objects: DNA, RNA and Proteins.
+アルファベットオブジェクトは、Seqオブジェクトを単純なstring以上にするうえで、重要なものです。現在 Biopythonで利用できるアルファベットは、Bio.Alphabet モジュールで定義されています。DNA, RNA, たんぱく質を扱うために IUPAC alphabets (http://www.chem.qmw.ac.uk/iupac/) を使います:
 
 .. Bio.Alphabet.IUPAC provides basic definitions for proteins, DNA and RNA, but additionally provides the ability to extend and customize the basic definitions. For instance, for proteins, there is a basic IUPACProtein class, but there is an additional ExtendedIUPACProtein class providing for the additional elements “U” (or “Sec” for selenocysteine) and “O” (or “Pyl” for pyrrolysine), plus the ambiguous symbols “B” (or “Asx” for asparagine or aspartic acid), “Z” (or “Glx” for glutamine or glutamic acid), “J” (or “Xle” for leucine isoleucine) and “X” (or “Xxx” for an unknown amino acid). For DNA you’ve got choices of IUPACUnambiguousDNA, which provides for just the basic letters, IUPACAmbiguousDNA (which provides for ambiguity letters for every possible situation) and ExtendedIUPACDNA, which allows letters for modified bases. Similarly, RNA can be represented by IUPACAmbiguousRNA or IUPACUnambiguousRNA.
 
