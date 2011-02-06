@@ -800,9 +800,9 @@ Biopython は何をするのでしょうか？Pythonオブジェクトに対し�
     True
 
 
-.. Now, in every day use, your sequences will probably all have the samealphabet, or at least all be the same type of sequence (all DNA, all RNA, orall protein). What you probably want is to just compare the sequences asstrings  so do this explicitly:
+.. Now, in every day use, your sequences will probably all have the same alphabet, or at least all be the same type of sequence (all DNA, all RNA, or all protein). What you probably want is to just compare the sequences as strings  so do this explicitly:
 
-Now, in every day use, your sequences will probably all have the samealphabet, or at least all be the same type of sequence (all DNA, all RNA, orall protein). What you probably want is to just compare the sequences asstrings  so do this explicitly:
+毎日使用される、シーケンスは、おそらく、同じようにアルファベットを持つとか、同じタイプ(すべてDNA, すべてRNA, または、すべてタンパク質)のシーケンスでしょう。そして、文字列としてシーケンスを比較したいとすれば、それは次のようになります:
 
 .. code-block:: python
 
