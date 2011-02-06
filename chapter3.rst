@@ -36,7 +36,7 @@ Bio.Alphabet.IUPAC provides basic definitions for proteins, DNA and RNA, but add
 
 .. The advantages of having an alphabet class are two fold. First, this gives an idea of the type of information the Seq object contains. Secondly, this provides a means of constraining the information, as a means of type checking.
 
-The advantages of having an alphabet class are two fold. First, this gives an idea of the type of information the Seq object contains. Secondly, this provides a means of constraining the information, as a means of type checking.
+アルファベットクラスを持つことには2つの利点があります。一つは、Seqオブジェクトの中身についての型の情報を与えてくれます。２つ目は、型チェックの手段として、情報を抑制してくれます。
 
 .. Now that we know what we are dealing with, let’s look at how to utilize this class to do interesting work.You can create an ambiguous sequence with the default generic alphabet like this:
 
@@ -54,7 +54,7 @@ The advantages of having an alphabet class are two fold. First, this gives an id
 
 .. However, where possible you should specify the alphabet explicitly when creating your sequence objects - in this case an unambiguous DNA alphabet object:
 
-However, where possible you should specify the alphabet explicitly when creating your sequence objects - in this case an unambiguous DNA alphabet object:
+しかしながら、アルファベットを明示的に指定して、シーケンスオブジェクトを作ることも可能です - 次の場合、unambiguous DNA アルファベットオブジェクトです:
 
 .. code-block:: python
 
