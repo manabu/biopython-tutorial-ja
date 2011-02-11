@@ -69,7 +69,7 @@ Bio.Alphabet.IUPAC は、DNA, RNA, たんぱく質に対する基本的な定義
 
 .. Unless of course, this really is an amino acid sequence:
 
-Unless of course, this really is an amino acid sequence:
+もちろん、これは実際にはアミノ酸シーケンスです:
 
 .. code-block:: python
 
@@ -85,8 +85,8 @@ Unless of course, this really is an amino acid sequence:
 .. index::
    pair: 3.2  Sequences act like strings;3.2  Sequences act like strings
 
-3.2  Sequences act like strings
--------------------------------
+3.2  シーケンスを文字列のように扱う
+-----------------------------------
 
 .. In many ways, we can deal with Seq objects as if they were normal Python strings, for example getting the length, or iterating over the elements:
 
